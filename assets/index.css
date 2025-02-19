@@ -1,8 +1,6 @@
 body {
     font-family: 'Iowan Old Style', serif;
-    background: url('assets/background.GIF') no-repeat center center fixed;
-    background-size: cover;  
-    background-attachment: fixed;
+    background: #0300ce;  
     color: #ffffff;
     margin: 0;
     height: 100vh;
@@ -128,8 +126,7 @@ body {
 
 @media screen and (max-width: 768px) {
     body {
-        background-size: 100% 100%;  
-        background-attachment: fixed;
+        background: #002FA7;  
         overflow: auto;
     }
 
