@@ -1,7 +1,7 @@
 body {
-    font-family: 'EB Garamond', Georgia, serif;
+    font-family: 'EB Garamond', Georgia, serif !important;
     background: #0300ce;  
-    color: #ffffff;
+    color: #ffffff !important;
     margin: 0;
     height: 100vh;
     min-height: 100vh;
@@ -126,7 +126,7 @@ body {
 
 @media screen and (max-width: 768px) {
     body {
-        background: #002FA7;  
+        background: #0300ce;  
         overflow: auto;
     }
 
