@@ -1,6 +1,6 @@
 body {
     font-family: 'EB Garamond', Georgia, serif !important;
-    background: #002FA7;  
+    background: #002FA7 !important;  
     color: #ffffff !important;
     margin: 0;
     height: 100vh;
