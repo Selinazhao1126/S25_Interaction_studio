@@ -1,9 +1,10 @@
 body {
-    background: #002FA7;
-    background-size: cover;
-    background-position: center;
+    font-family: 'Iowan Old Style', serif;
+    background: #0300ce;  
+    color: #ffffff;
     margin: 0;
     height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 
