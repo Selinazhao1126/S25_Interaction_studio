@@ -23,10 +23,6 @@ window.onload = () => {
         }, 3000);
     });
 
-    summerText.addEventListener("click", () => {
-        window.location.href = "/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry4/entry4.html";
-    });
-
     summerText.addEventListener("mouseover", () => {
         summerText.classList.add("rotating-text");
     });
@@ -124,4 +120,3 @@ function animate() {
 }
 
 animate();
-
