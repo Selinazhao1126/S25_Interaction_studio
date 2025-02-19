@@ -1,7 +1,6 @@
 body {
-    font-family: 'Iowan Old Style', serif;
-    background: url('/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry2/assets/background.GIF') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'EB Garamond', Georgia, serif;
+    background: #002FA7 !important;
     color: #e4eaff;
     margin: 0;
     height: 100vh;
@@ -89,8 +88,7 @@ body {
 
 @media screen and (max-width: 768px) {
     body {
-        background-size: 100% 100%;
-        background-attachment: fixed;
+        background: #002FA7 !important;
         overflow: auto;
     }
 
@@ -140,3 +138,4 @@ body {
         transform: scale(1.2);
     }
 }
+
