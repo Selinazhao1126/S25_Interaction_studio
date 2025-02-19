@@ -4,7 +4,6 @@ window.onload = () => {
     const textSection1 = document.getElementById('section-1');
     const textSection2 = document.getElementById('section-2');
     const shadeText = document.getElementById('shade');
-    const eternalText = document.getElementById('eternal-lines');
 
     icon.addEventListener('click', () => {
         iconContainer.classList.add('icon-small');
@@ -45,10 +44,6 @@ window.onload = () => {
 
             setTimeout(() => span.remove(), 2500);
         }
-    });
-
-    eternalText.addEventListener("click", () => {
-        window.location.href = "/Users/selina/Desktop/Zhao_c1ix_f24/S25_Interaction_studio/entries/entry5/entry5.html";
     });
 };
 
