@@ -6,8 +6,9 @@ body {
     height: 100vh;
     overflow: hidden;
     text-align: right;
-}
-#navbar {
+  }
+  
+  #navbar {
     position: fixed;
     top: 15px;
     left: 50%;
@@ -20,67 +21,73 @@ body {
     border-radius: 30px;
     z-index: 9999;
     backdrop-filter: blur(10px);
-}
-#navbar a {
+  }
+  
+  #navbar a {
     font-family: 'EB Garamond', serif;
     font-size: 1rem;
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-#navbar a:hover {
+  }
+  
+  #navbar a:hover {
     color: #ffcc00;
     text-shadow: 0 0 5px #ffcc00;
-}
-#icon-container {
+  }
+  
+  #icon-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 1.5s ease-in-out;
     z-index: 2;
-}
-#icon {
+  }
+  
+  #icon {
     width: 10vw;
     height: 10vw;
     cursor: pointer;
     animation: spin-center 5s linear infinite;
     transform-origin: center;
-}
-@keyframes spin-center {
+  }
+  
+  @keyframes spin-center {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-.section {
+  }
+  
+  .section {
     position: absolute;
-    text-align: right;
     font-size: 2rem;
     opacity: 0;
     transform: translateY(50px);
     transition: all 1.5s ease-in-out;
-}
-#section-1 { top: 10%; right: 10%; }
-#section-2 {
+    max-width: 80vw;
+  }
+  
+  #section-1 { top: 10%; right: 10%; }
+  #section-2 {
     top: 40%;
     right: 10%;
     font-size: 3rem;
     animation: floatAttention 3s ease-in-out infinite alternate;
     text-shadow: 0 0 5px #ffffff, 0 0 10px #66ccff, 0 0 15px #0044ff;
     cursor: pointer;
-}
-@keyframes floatAttention {
+  }
+  #section-3 {
+    bottom: 10%;
+    right: 10%;
+  }
+  
+  @keyframes floatAttention {
     0% { transform: translateY(0) scale(1); }
     50% { transform: translateY(-10px) scale(1.05); }
     100% { transform: translateY(0) scale(1); }
-}
-#section-3 {
-    bottom: 10%;
-    right: 10%;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1.5s ease-in-out;
-}
-.neon-text {
+  }
+  
+  .neon-text {
     font-family: 'Shrikhand', cursive;
     font-size: 3rem;
     color: #ffffff;
@@ -88,13 +95,15 @@ body {
     transition: transform 0.3s ease-in-out, text-shadow 0.5s ease-in-out;
     display: inline-block;
     text-decoration: underline;
-}
-.neon-text:hover {
+  }
+  
+  .neon-text:hover {
     transform: scale(1.2);
     color: #ffffff;
     text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 50px #ffcc00;
-}
-.hover-word {
+  }
+  
+  .hover-word {
     position: relative;
     font-weight: bold;
     font-style: italic;
@@ -102,8 +111,9 @@ body {
     color: #ffffff;
     display: inline-block;
     transition: all 0.3s ease-in-out;
-}
-.hover-word::before {
+  }
+  
+  .hover-word::before {
     content: attr(data-tooltip);
     position: absolute;
     bottom: -40px;
@@ -116,22 +126,27 @@ body {
     border-radius: 20px;
     opacity: 0;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-.hover-word:hover::before {
+  }
+  
+  .hover-word:hover::before {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-}
-@media screen and (max-width: 768px) {
+  }
+  
+  @media screen and (max-width: 768px) {
     body { overflow: auto; }
+  
     .section {
-        text-align: center;
-        font-size: 6vw;
-        left: 50%;
-        transform: translateX(-50%);
-        max-width: 80vw;
+      text-align: center;
+      font-size: 6vw;
+      left: 50%;
+      transform: translateX(-50%);
     }
+  
     #section-1 { top: 10%; }
     #section-2 { top: 35vh; }
     #section-3 { bottom: 5vh; }
+  
     .neon-text { font-size: 10vw; }
-}
+  }
+  
