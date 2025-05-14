@@ -8,7 +8,6 @@ body {
     cursor: none;
   }
   
-  /* 🧭 Navbar styling */
   .navbar {
     position: absolute;
     top: 15px;
@@ -19,7 +18,7 @@ body {
     background-color: rgba(0, 0, 0, 0.15);
     padding: 8px 16px;
     border-radius: 12px;
-    z-index: 99;
+    z-index: 1000; /* 确保在所有元素之上 */
     font-family: 'EB Garamond', serif;
   }
   
@@ -29,7 +28,7 @@ body {
     font-size: 1rem;
     padding: 4px 8px;
     white-space: nowrap;
-  }
+  }  
   
   #icon-container {
     position: absolute;
