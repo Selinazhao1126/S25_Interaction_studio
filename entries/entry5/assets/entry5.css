@@ -25,6 +25,33 @@ body {
     color: #ffd900;
 }
 
+#navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 8px 20px;
+    border-radius: 30px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+  }
+  
+  #navbar a {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #navbar a:hover {
+    color: #ffcc00;
+    text-shadow: 0 0 5px #ffcc00;
+  }
+  
 @keyframes floatSlow {
     0% { transform: translate(0, 0); }
     25% { transform: translate(500px, -300px); }

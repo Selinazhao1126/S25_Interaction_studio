@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 INPUT 1 OUTPUT TEMPLATE</title>
+    <link rel="stylesheet" href="/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/one-inputoutput.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="searchContainer">
+        <input type="text" id="charInput" maxlength="1">
+        <button onclick="displayImage()" id="submitButton">Show Image</button>
+    </div>
+
+    <div id="imageContainer">
+        <img id="displayedImage" src="" alt="Displayed Image">
+        <p id="imageTitle"></p>
+    </div>
+
+    <script>
+        const images = [
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Acropolis.jpeg", //A
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/BigBen.jpg", //B
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Colosseum.jpg", //C
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/DubaiBurjKhalifa.jpg", //D
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/EiffelTower.jpg", //E
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/ForbiddenCity.jpg", //F
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/GrandCanyon.jpg", //G
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Hagiasophia.jpg", //H
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/IguazuFalls.jpg", //I
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/JejuIsland.jpg", //J
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/KyotoFushimiInariShrine.jpg", //K
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/LeaningTowerofPisa.jpg", //L
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/MachuPicchu.jpg", //M
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/NeuschwansteinCastle.jpg", //N
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/OperaHouse.jpg", //O
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Petra.jpg", //P
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/QinTerracottaArmy.jpg", //Q
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/RedSquare.jpg", //R
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/StatueofLiberty.jpg", //S
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/TajMahal.jpg", //T
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Uluru.jpg", //U
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/VictoriaFalls.jpg", //V
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/WhiteHouse.jpg", //W
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/Xi'anCityWall.jpg", //X
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/YellowstoneNationalPark.jpg", //Y
+            "/Users/selina/Desktop/S25_Interaction_studio/S25_Interaction_studio/assets/ZionNationalPark.jpg"  //Z
+        ];
+
+        const landmarks = [
+            "Acropolis - Greece 🇬🇷", "Big Ben - UK 🇬🇧", "Colosseum - Italy 🇮🇹",
+            "Burj Khalifa - UAE 🇦🇪", "Eiffel Tower - France 🇫🇷", "Forbidden City - China 🇨🇳",
+            "Grand Canyon - USA 🇺🇸", "Hagia Sophia - Turkey 🇹🇷", "Iguazu Falls - Argentina/Brazil 🇦🇷🇧🇷",
+            "Jeju Island - South Korea 🇰🇷", "Fushimi Inari Shrine - Japan 🇯🇵", "Leaning Tower of Pisa - Italy 🇮🇹",
+            "Machu Picchu - Peru 🇵🇪", "Neuschwanstein Castle - Germany 🇩🇪", "Sydney Opera House - Australia 🇦🇺",
+            "Petra - Jordan 🇯🇴", "Terracotta Army - China 🇨🇳", "Red Square - Russia 🇷🇺",
+            "Statue of Liberty - USA 🇺🇸", "Taj Mahal - India 🇮🇳", "Uluru - Australia 🇦🇺",
+            "Victoria Falls - Zambia/Zimbabwe 🇿🇲🇿🇼", "White House - USA 🇺🇸", "Xi'an City Wall - China 🇨🇳",
+            "Yellowstone National Park - USA 🇺🇸", "Zion National Park - USA 🇺🇸"
+        ];
+
+        function displayImage() {
+            const input = document.getElementById("charInput").value.toUpperCase();
+            const imgElement = document.getElementById("displayedImage");
+            const titleElement = document.getElementById("imageTitle");
+
+            const index = input.charCodeAt(0) - 65;
+            if (index >= 0 && index < images.length) {
+                imgElement.src = images[index];
+                imgElement.style.display = "block";
+                titleElement.textContent = landmarks[index];
+                titleElement.style.display = "block";
+            } else {
+                imgElement.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmtkdnJhMXY4Njd1cXR3MTM3MW1nMzZ1NXNhNHlhOHA0MWF2dDUzdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/13dRJkj5wgKq9q/giphy.gif";
+                imgElement.style.display = "block";
+                titleElement.textContent = "Invalid input! Please enter a letter A-Z.";
+                titleElement.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

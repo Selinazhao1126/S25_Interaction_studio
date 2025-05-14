@@ -6,53 +6,76 @@ body {
     height: 100vh;
     overflow: hidden;
     cursor: none;
-}
-
-#icon-container {
+  }
+  
+  /* 🧭 Navbar styling */
+  .navbar {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 8px 16px;
+    border-radius: 12px;
+    z-index: 99;
+    font-family: 'EB Garamond', serif;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 4px 8px;
+    white-space: nowrap;
+  }
+  
+  #icon-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 1.5s ease-in-out;
     z-index: 2;
-}
-
-#icon {
+  }
+  
+  #icon {
     width: 150px;
     height: 150px;
     cursor: pointer;
     animation: spin-center 5s linear infinite;
     transform-origin: center;
-}
-
-@keyframes spin-center {
+  }
+  
+  @keyframes spin-center {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}
-
-.poem-line {
+  }
+  
+  .poem-line {
     position: absolute;
     opacity: 0;
     font-size: 3rem;
     text-shadow: 0 0 20px #ffffff, 0 0 40px #0044ff, 0 0 60px #66ccff;
-}
-
-.line-1 { top: 20%; left: 10%; }
-.line-2 { top: 35%; left: 15%; }
-.line-3 { top: 50%; left: 20%; }
-.line-4 { top: 65%; left: 25%; }
-
-#water-effect-container {
+  }
+  
+  .line-1 { top: 20%; left: 10%; }
+  .line-2 { top: 35%; left: 15%; }
+  .line-3 { top: 50%; left: 20%; }
+  .line-4 { top: 65%; left: 25%; }
+  
+  #water-effect-container {
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     left: 0;
-    width: 200%;  
+    width: 200%;
     overflow: hidden;
     display: flex;
     white-space: nowrap;
-}
-
-.water-effect-text {
+  }
+  
+  .water-effect-text {
     font-size: 4rem;
     color: #ffffff;
     filter: blur(2px);
@@ -60,82 +83,91 @@ body {
     white-space: nowrap;
     padding-right: 50px;
     animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
+  }
+  
+  @keyframes marquee {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
-}
-
-#explore-button {
-    position: absolute;
-    top: 10%;
+  }
+  
+  #explore-button {
+    position: fixed;
+    bottom: 5%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-}
-
-#explore-button img {
-    width: 150px;
+    transform: translateX(-50%);
+    opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 50;
+  }
+  
+  #explore-button img {
+    width: 120px;
     height: auto;
     transition: transform 0.3s ease-in-out;
-}
-
-#explore-button img:hover {
+  }
+  
+  #explore-button img:hover {
     transform: scale(1.2);
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        background: #002FA7 !important;
-        overflow: auto;
+  }
+  
+  /* ✅ Mobile styles */
+  @media screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+      top: 10px;
+      width: 90vw;
+      padding: 10px;
+      gap: 10px;
     }
-
+  
+    .navbar a {
+      font-size: 4vw;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+  
+    .navbar a:last-child {
+      border-bottom: none;
+    }
+  
     #icon {
-        width: 30vw; 
-        height: 30vw;
+      width: 30vw;
+      height: 30vw;
     }
-
+  
     .poem-line {
-        font-size: 6vw; 
-        text-align: center;
-        left: 50%;
-        transform: translateX(-50%);
-        white-space: wrap;
-        max-width: 80vw;
-        text-shadow: 0 0 5px #ffffff, 0 0 10px #0044ff, 0 0 15px #66ccff;
+      font-size: 6vw;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 80vw;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #0044ff, 0 0 15px #66ccff;
     }
-
+  
     .line-1 { top: 15%; }
     .line-2 { top: 30%; }
     .line-3 { top: 45%; }
     .line-4 { top: 60%; }
-
-    #water-effect-container {
-        bottom: 9%;
-    }
-
+  
     .water-effect-text {
-        font-size: 6vw;
-        font-weight: bold;
-        text-shadow: 0 0 5px #ffffff, 0 0 10px #66ccff, 0 0 15px #0044ff;
-        filter: blur(0.5px);
+      font-size: 6vw;
+      font-weight: bold;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #66ccff, 0 0 15px #0044ff;
+      filter: blur(0.5px);
     }
-
+  
     #explore-button {
-        top: 85%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(1);
+      bottom: 5%;
     }
-
+  
     #explore-button img {
-        width: 20vw; 
-        height: auto;
+      width: 20vw;
     }
-
+  
     #explore-button img:active {
-        transform: scale(1.2);
+      transform: scale(1.2);
     }
-}
-
+  }
+  
